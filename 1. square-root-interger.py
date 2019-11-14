@@ -1,7 +1,6 @@
 # def sqrt(number):
 #     return int(number ** (1 / 2))
 
-
 def sqrt(number):  # O(logn)
     result = 0
     while (result + 1) ** 2 <= number:
