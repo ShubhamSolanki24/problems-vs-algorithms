@@ -71,12 +71,6 @@ class Router:
         # e.g. /about and /about/ both return the /about handler
         return self.route_trie.find(path)
 
-    def split_path(self, ):
-        pass
-        # you need to split the path into parts for
-        # both the add_handler and lookup functions,
-        # so it should be placed in a function here
-
 
 if __name__ == '__main__':
     # Here are some test cases and expected outputs you can use to test your implementation
