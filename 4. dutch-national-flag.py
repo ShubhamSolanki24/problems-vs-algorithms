@@ -1,22 +1,22 @@
-def sort_012(input_list):  # Time --> O(n), # Space --> O(n) (there are no requirements for space complexity)
+def sort_012(input_list): # O(n)
     """
     Given an input array consisting on only 0, 1, and 2, sort the array in a single traversal.
 
     Args:
        input_list(list): List to be sorted
     """
-    result = []
+    zeros = []
+    ones = []
+    twos = []
     for item in input_list:
-        if item == 0:
-            result.insert(0, item)
-        elif item == 1:
-            result.append(item)
+        if item is 0:
+            zeros.append(item)
+        elif item is 1:
+            ones.append(item)
+        else:
+            twos.append(item)
 
-    for item in input_list:
-        if item == 2:
-            result.append(2)
-
-    return result
+    return zeros + ones + twos
 
 
 def test_function(test_case):
