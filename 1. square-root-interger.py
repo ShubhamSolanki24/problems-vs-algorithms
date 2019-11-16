@@ -1,14 +1,28 @@
-# def sqrt(number):
+# def sqrt(number): O(1)
 #     return int(number ** (1 / 2))
+
+# def sqrt(number):  # > logn
+#     result = 0
+#     while (result + 1) ** 2 <= number:
+#         result += 1
+#     return result
 
 def sqrt(number):  # O(logn)
     if number < 0:
         print(number, ' is invalid, must be greater than or equal to 0')
         return -1
-    result = 0
-    while (result + 1) ** 2 <= number:
-        result += 1
-    return result
+    elif number == 1:
+        return 1
+    return binary_search_sqrt(0, number // 2, number)
+
+
+def binary_search_sqrt(left_pointer, right_pointer, target):
+    mid_pointer = (left_pointer + right_pointer) // 2
+    if mid_pointer ** 2 <= target < (mid_pointer + 1) ** 2:
+        return mid_pointer
+    elif mid_pointer ** 2 > target:
+        return binary_search_sqrt(left_pointer, mid_pointer - 1, target)
+    return binary_search_sqrt(mid_pointer + 1, right_pointer, target)
 
 
 if __name__ == '__main__':
