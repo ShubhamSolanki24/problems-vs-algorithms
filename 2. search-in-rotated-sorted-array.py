@@ -10,6 +10,8 @@ def rotated_array_search(input_list, number):
     Returns:
        int: Index or -1
     """
+    if not input_list:
+        return -1
 
     pivot_idx = find_pivot(input_list, 0, len(input_list) - 1)  # O(logn)
     if pivot_idx == len(input_list) - 1:
@@ -62,3 +64,4 @@ if __name__ == '__main__':
     test_function([[3, 4, 5, 1, 2], 1])
     test_function([[1, 2, 3, 4, 5, 6], -1])
     test_function([[1, 2, 3, 4, 5, 6], 7])
+    test_function([[], 7])
