@@ -1,7 +1,7 @@
 # def sqrt(number): O(1)
 #     return int(number ** (1 / 2))
 
-# def sqrt(number):  # > logn
+# def sqrt(number):  # Big O > logn
 #     result = 0
 #     while (result + 1) ** 2 <= number:
 #         result += 1
